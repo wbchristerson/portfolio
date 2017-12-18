@@ -1,0 +1,317 @@
+/* this initial flexbox container design was based on an example from the
+following site: https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.vertical-flex-container {
+  padding: 0;
+  margin: 0;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  width: 100%;
+}
+
+.third-row {
+  height: 370px;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.flex-item {
+  padding: 5px;
+  width: 100%;
+  height: 200px;
+  margin: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.flex-vert-item {
+  padding: 5px;
+  width: 120px;
+  height: 120px;
+  margin: 10px;
+}
+
+.left-item {
+  width: 10%;
+  margin-right: 30px;
+}
+
+.right-item {
+  width: 80%;
+  font-weight: normal;
+  text-align: right;
+}
+
+/* heights are given as concrete lengths to be altered for smaller screen
+   sizes using media queries below */
+.top-item {
+  height: 150px;
+}
+
+.mid-item {
+  height: 100%;
+}
+
+.bot-item {
+  height: 370px;
+}
+
+.right-vert-item {
+  width: 80%;
+  height: 40px;
+  margin-left: auto;
+}
+
+hr {
+  color: #7d97ad;
+  background-color: #7d97ae;
+  height: 5px;
+}
+
+.mid-right-image {
+  width: 100%;
+  height: auto;
+}
+
+.small-image {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+
+.bottom-flex-item {
+  padding: 5px;
+  width: 25%;
+  height: 40px;
+  margin: 10px;
+  text-align: center;
+}
+
+.image-spot {
+  width: 80%;
+  height: auto;
+}
+
+/* an additional top margin must be used for the second and third projects
+   since they do not have the "featured work" text directly above them */
+.secondary-image {
+  margin-top: 80px;
+}
+
+.description {
+  width: 100%;
+  height: auto;
+  font: 1.5em "Open Sans", sans-serif;
+  margin-bottom: 0;
+}
+
+.site-location {
+  height: 10px;
+  font: 0.75em "Open Sans", sans-serif;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+.info-side-bar {
+  height: 150px;
+  justify-content: center;
+}
+
+.info-tab {
+  height: 50px;
+  color: #33d2e0;
+  padding: 5px;
+}
+
+.bottom-space {
+  margin-bottom: 20%;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.bullet-point-indent {
+  align-items: flex-start;
+  padding: 10px;
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+.name-text {
+  font: 3em "Open Sans", sans-serif;
+  font-weight: 100;
+}
+
+.hobby-text {
+  font: 1em "Open Sans", sans-serif;
+  font-weight: 200;
+}
+
+.feature-text {
+  font: 2.3em "Open Sans", sans-serif;
+  font-weight: 300;
+  color: #7d97ad;
+}
+
+.footer-values {
+  background-color: #e2dede;
+}
+
+.project-info {
+  height: auto;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px #ccc;
+}
+
+.project-info-secondary {
+  margin: 80px auto auto 0;
+}
+
+.width-alteration {
+  width: 100%;
+}
+
+/* make the "featured work" text smaller so that it does not have to wrap to
+   two lines and be covered by the first project image */
+@media screen and (max-width: 1250px) {
+  .feature-text {
+    font: 1.7em "Open Sans", sans-serif;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .side-bar-order {
+    order: 1;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+  .right-item {
+    width: 100%;
+  }
+
+  .right-vert-item {
+    width: 50%;
+  }
+
+  .info-side-bar {
+    text-align: center;
+    width: 10%;
+    margin: auto 5% auto 5%;
+  }
+
+  .mid-right-image {
+    height: auto;
+    margin: auto auto 0 5%;
+  }
+
+  .mid-item {
+    margin: auto 5% 0 auto;
+    justify-content: center;
+  }
+
+  .bot-item {
+    height: auto;
+  }
+
+  .third-row {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .top-item {
+    margin: auto 5%;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .bottom-flex-item {
+    width: 95%;
+    height: auto;
+  }
+
+  .third-row {
+    flex-direction: row;
+    justify-content: center;
+    height: auto;
+  }
+
+  .mid-item {
+    justify-content: center;
+  }
+
+  .large-image {
+    display: none;
+  }
+
+  .small-image {
+    display: inline;
+  }
+
+  .project-info {
+    order: 3;
+    width: 90%;
+    margin: 20px auto 10px 0;
+  }
+
+  .footer-values {
+    order: 4;
+  }
+
+  .mid-right-image {
+    height: 100%;
+  }
+
+  .feature-text {
+    font: 2.3em "Open Sans", sans-serif;
+  }
+
+  .project-info-secondary {
+    margin-top: 10px;
+  }
+
+  .bot-item {
+    height: auto;
+  }
+
+  .info-side-bar {
+    margin-left: 10%;
+  }
+
+  .name-text {
+    font: 2em "Open Sans", sans-serif;
+  }
+
+  footer {
+    bottom: 0;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .name-text {
+    font: 1.5em "Open Sans", sans-serif;
+    margin-left: 0;
+  }
+
+  hr {
+    margin: 5% auto auto 0;
+    width: 110%;
+  }
+}
